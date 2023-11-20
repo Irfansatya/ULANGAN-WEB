@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keliling Trapesium</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Keliling Trapesium</h1>
+
+    <form id="formTrapesium">
+        <label for="sisiA">Panjang Sisi A: </label>
+        <input type="number" id="sisiA" name="sisiA" required><br>
+
+        <label for="sisiB">Panjang Sisi B: </label>
+        <input type="number" id="sisiB" name="sisiB" required><br>
+
+        <label for="sisiC">Panjang Sisi C: </label>
+        <input type="number" id="sisiC" name="sisiC" required><br>
+
+        <label for="sisiD">Panjang Sisi D: </label>
+        <input type="number" id="sisiD" name="sisiD" required><br>
+
+        <button type="button" onclick="hitungKeliling()">Hitung Keliling</button>
+    </form>
+
+    <div id="hasilKeliling"></div>
+
+    <script>
+        function hitungKeliling() {
+            // Mendapatkan nilai panjang sisi dari input
+            var sisiA = parseFloat(document.getElementById("sisiA").value);
+            var sisiB = parseFloat(document.getElementById("sisiB").value);
+            var sisiC = parseFloat(document.getElementById("sisiC").value);
+            var sisiD = parseFloat(document.getElementById("sisiD").value);
+            
+            // Mendapatkan elemen hasil keliling
+            var hasilKelilingElement = document.getElementById("hasilKeliling");
+
+            // Menghapus konten sebelumnya
+            hasilKelilingElement.innerHTML = "";
+
+            // Menentukan keliling trapesium
+            var keliling = sisiA + sisiB + sisiC + sisiD;
+
+            // Menampilkan hasil keliling
+            hasilKelilingElement.innerHTML = "Keliling trapesium adalah " + keliling;
+        }
+    </script>
+
+<form action="index.html">
+    <button type="submit">
+        kembali
+    </button>
+</form>
+
+</body>
+</html>

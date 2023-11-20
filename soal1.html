@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deskripsi Golongan Darah</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Deskripsi Golongan Darah</h1>
+
+    <form id="formGolonganDarah">
+        <label for="golonganDarah">Masukkan Golongan Darah (A, B, AB, O): </label>
+        <input type="text" id="golonganDarah" name="golonganDarah" required>
+        <button type="button" onclick="tampilkanDeskripsi()">Submit</button>
+    </form>
+
+    <div id="hasilDeskripsi"></div>
+
+    <script>
+        function tampilkanDeskripsi() {
+            // Mendapatkan nilai input golongan darah
+            var golonganDarahInput = document.getElementById("golonganDarah").value.toUpperCase();
+            
+            // Mendapatkan elemen hasil deskripsi
+            var hasilDeskripsiElement = document.getElementById("hasilDeskripsi");
+
+            // Menghapus konten sebelumnya
+            hasilDeskripsiElement.innerHTML = "";
+
+            // Menentukan deskripsi berdasarkan golongan darah
+            var deskripsi = "";
+            switch(golonganDarahInput) {
+                case "A":
+                    deskripsi = "Ciri-ciri golongan darah A: Pengambil Keputusan yang Baik";
+                    break;
+                case "B":
+                    deskripsi = "Ciri-ciri golongan darah B: Memiliki sistem kekebalan dan sistem pencernaan yang lebih baik dibandingkan golongan darah lainnya";
+                    break;
+                case "AB":
+                    deskripsi = "Ciri-ciri golongan darah AB: memiliki karakter yang kritis, rasional, bertanggung jawab, suka menolong, dan mudah beradaptasi";
+                    break;
+                case "O":
+                    deskripsi = "Ciri-ciri golongan darah O: Sikapnya yang mudah beradaptasi dengan lingkungan";
+                    break;
+                default:
+                    deskripsi = "Golongan darah tidak valid. Masukkan A, B, AB, atau O.";
+            }
+
+            // Menampilkan hasil deskripsi
+            hasilDeskripsiElement.innerHTML = deskripsi;
+        }
+    </script>
+
+<form action="index.html">
+    <button type="submit">
+        kembali
+    </button>
+</form>
+
+</body>
+</html>
